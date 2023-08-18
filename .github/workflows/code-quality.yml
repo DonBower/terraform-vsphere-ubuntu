@@ -20,7 +20,7 @@ jobs:
           DISABLE_ERRORS: false
           IGNORE_GITIGNORED_FILES: true
           VALIDATE_ALL_CODEBASE: true
-          VALIDATE_ANSIBLE: false
-          VALIDATE_TERRAFORM_TERRASCAN: true
-          VALIDATE_TERRAFORM_TFLINT: true
-          VALIDATE_MARKDOWN: false
+          # VALIDATE_ANSIBLE: false
+          # VALIDATE_TERRAFORM_TERRASCAN: true
+          # VALIDATE_TERRAFORM_TFLINT: true
+          # VALIDATE_MARKDOWN: false
