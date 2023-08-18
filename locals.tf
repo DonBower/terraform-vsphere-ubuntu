@@ -4,7 +4,7 @@ locals {
     vmHostName     = var.vmHostName != null ? var.vmHostName : var.vsphereName
     vmFolder       = var.vsphereFolderName != null ? var.vsphereFolderName : "/${var.vsphereDatacenterName}/vm/test-vms"
     vmTemplateID   = data.vsphere_virtual_machine.template.id
-    vmResourcePool = data.vsphere_compute_cluster.cluster.resource_pool_id
+    vmResourcePool = data.vsphere_resource_pool.default.id
     vmDatastore    = data.vsphere_datastore.datastore.id
     network = {
       staticMAC      = var.vmMacAddress != null ? true : false
