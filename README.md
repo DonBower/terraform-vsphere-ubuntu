@@ -7,5 +7,3 @@
 [![The Changelog](https://img.shields.io/badge/The%20Changelog-Read-blue?style=for-the-badge&logo=github)](CHANGELOG.md)&nbsp;&nbsp;
 ![Packer 1.9.2](https://img.shields.io/badge/HashiCorp%20Packer-1.9.2-blue?style=for-the-badge&logo=packer&logoColor=white)
 
-# terraform-vsphere-ubuntu
-Create an Ubuntu Server on vSphere

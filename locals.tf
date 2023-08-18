@@ -1,19 +1,19 @@
 locals {
   thisVM = {
-    vmHostName                = var.vmHostName != null ? var.vmHostName : var.vsphereName
-    vmFolder                  = var.vsphereFolderName != null ? var.vsphereFolderName : "/${var.vsphereDatacenterName}/vm/test-vms"
-    vmTemplateID              = data.vsphere_virtual_machine.template.id
-    vmResourcePool            = data.vsphere_compute_cluster.cluster.resource_pool_id
-    vmDatastore               = data.vsphere_datastore.datastore.id
+    vmHostName     = var.vmHostName != null ? var.vmHostName : var.vsphereName
+    vmFolder       = var.vsphereFolderName != null ? var.vsphereFolderName : "/${var.vsphereDatacenterName}/vm/test-vms"
+    vmTemplateID   = data.vsphere_virtual_machine.template.id
+    vmResourcePool = data.vsphere_compute_cluster.cluster.resource_pool_id
+    vmDatastore    = data.vsphere_datastore.datastore.id
     network = {
-      staticMAC               = var.vmMacAddress != null ? true : false
-      macAddress              = var.vmMacAddress # "00:50:56:a8:02:14"
-      vsphereNetwork          = data.vsphere_network.network.id
+      staticMAC      = var.vmMacAddress != null ? true : false
+      macAddress     = var.vmMacAddress # "00:50:56:a8:02:14"
+      vsphereNetwork = data.vsphere_network.network.id
     }
     disk = {
-      label                   = "root"
-      size                    = var.vmDiskSize
-      thisProvision           = true
+      label         = "root"
+      size          = var.vmDiskSize
+      thisProvision = true
     }
   }
 }
