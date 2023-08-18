@@ -38,3 +38,8 @@ output "thisIP" {
   sensitive = false
   value     = vsphere_virtual_machine.thisUbuntu.default_ip_address
 }
+
+output "thisDatastore" {
+  sensitive = false
+  value     = var.vsphereDatastoreName
+}

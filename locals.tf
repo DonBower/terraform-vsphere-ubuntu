@@ -22,7 +22,7 @@ locals {
 # locals {
 #   thisVM = {
 #     name = "ubuntu-2204"
-#     dnsDomain = "ag6hq.net"
+#     dnsDomain = "local"
 #     resourcePool = data.vsphere_compute_cluster.cluster.resource_pool_id
 #     dataStore = data.vsphere_datastore.esx1.id
 #     secureBoot = true
