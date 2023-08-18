@@ -1,4 +1,5 @@
 locals {
+  vsphereResourceName = var.vsphereResourceName != null ? var.vsphereResourceName : format("%s%s", data.vsphere_compute_cluster.cluster.name, "/Resources")
   thisVM = {
     vmHostName     = var.vmHostName != null ? var.vmHostName : var.vsphereName
     vmFolder       = var.vsphereFolderName != null ? var.vsphereFolderName : "/${var.vsphereDatacenterName}/vm/test-vms"

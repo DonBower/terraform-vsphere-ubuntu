@@ -27,6 +27,7 @@ variable "vsphereHostName" {
 variable "vsphereResourceName" {
   description = "the Name of the vSphere Resource Pool"
   type        = string
+  default     = null
 }
 
 variable "vsphereDatastoreName" {

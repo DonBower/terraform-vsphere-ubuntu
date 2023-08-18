@@ -13,10 +13,19 @@ module "thisUbuntu" {
   vsphereDatastoreName  = "esx1-datastore1"
   vsphereTemplateName   = "ubuntu-22.04-main"
   vsphereHostName       = "esx1.ag6hq.net"
-  vsphereResourceName   = "ag6hq-cluster1"
+  # vsphereResourceName   = "ag6hq-k8s"
 }
 
 output "thisUbuntuIP" {
   sensitive = false
   value     = module.thisUbuntu.thisIP
 }
+
+output "vrpname" {
+  value = module.thisUbuntu.vrpname
+}
+
+output "vrpid" {
+  value = module.thisUbuntu.vrpid
+}
+
