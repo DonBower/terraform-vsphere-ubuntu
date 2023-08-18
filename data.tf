@@ -7,10 +7,10 @@ data "vsphere_network" "network" {
   datacenter_id = data.vsphere_datacenter.datacenter.id
 }
 
-data "vsphere_host" "host" {
-  name          = var.vsphereHostName
-  datacenter_id = data.vsphere_datacenter.datacenter.id
-}
+# data "vsphere_host" "host" {
+#   name          = var.vsphereHostName
+#   datacenter_id = data.vsphere_datacenter.datacenter.id
+# }
 
 data "vsphere_compute_cluster" "cluster" {
   name          = var.vsphereClusterName
@@ -20,12 +20,12 @@ data "vsphere_compute_cluster" "cluster" {
 data "vsphere_resource_pool" "default" {
   # name          = format("%s%s", data.vsphere_compute_cluster.cluster.name, "/Resources")
   # name = "ag6hq-k8s"
-  name = local.vsphereResourceName
+  name          = local.vsphereResourceName
   datacenter_id = data.vsphere_datacenter.datacenter.id
 }
 
 output "vrpname" {
-  value = data.vsphere_resource_pool.default.name  
+  value = data.vsphere_resource_pool.default.name
 }
 
 output "vrpid" {
