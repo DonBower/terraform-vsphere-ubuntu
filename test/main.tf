@@ -12,7 +12,7 @@ module "thisUbuntu" {
   vsphereFolderName     = "test-vms"
   vsphereDatastoreName  = "esx1-datastore1"
   vsphereTemplateName   = "ubuntu-22.04-main"
-  vsphereHostName       = "esx1.ag6hq.net"
+  # vsphereHostName       = "esx1.ag6hq.net"
   # vsphereResourceName   = "ag6hq-k8s"
 }
 

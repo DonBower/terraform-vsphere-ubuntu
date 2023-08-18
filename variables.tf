@@ -19,10 +19,10 @@ variable "vsphereClusterName" {
   type        = string
 }
 
-variable "vsphereHostName" {
-  description = "The Name of the vSphere ESX Host"
-  type        = string
-}
+# variable "vsphereHostName" {
+#   description = "The Name of the vSphere ESX Host"
+#   type        = string
+# }
 
 variable "vsphereResourceName" {
   description = "the Name of the vSphere Resource Pool"
