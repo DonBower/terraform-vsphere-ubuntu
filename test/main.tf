@@ -1,7 +1,7 @@
 module "thisUbuntu" {
-  source                = "../"
+  source = "../"
   providers = {
-    vsphere             = vsphere.homeLab
+    vsphere = vsphere.homeLab
   }
   vmCPUs                = 1
   vmRAM                 = 1024
