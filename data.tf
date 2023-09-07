@@ -35,8 +35,8 @@ data "vsphere_virtual_machine" "template" {
 }
 
 data "vsphere_content_library" "library" {
-  count      = var.vsphereContentLibrary != null ? 1 : 0
-  name = var.vsphereContentLibrary
+  count = var.vsphereContentLibrary != null ? 1 : 0
+  name  = var.vsphereContentLibrary
 }
 
 data "vsphere_content_library_item" "template" {
