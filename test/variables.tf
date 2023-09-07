@@ -40,6 +40,11 @@ variable "vsphereDatastoreName" {
   type        = string
 }
 
+variable "vsphereContentLibrary" {
+  description = "the Name of the vSphere Content Library"
+  type        = string
+}
+
 variable "vsphereNetworkName" {
   description = "the Name of the vSphere Network"
   type        = string

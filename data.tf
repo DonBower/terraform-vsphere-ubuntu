@@ -29,7 +29,19 @@ data "vsphere_datastore" "datastore" {
 }
 
 data "vsphere_virtual_machine" "template" {
+  count         = var.vsphereTemplateName != null ? 1 : 0
   name          = var.vsphereTemplateName
   datacenter_id = data.vsphere_datacenter.datacenter.id
 }
 
+data "vsphere_content_library" "library" {
+  count = var.vsphereContentLibrary != null ? 1 : 0
+  name  = var.vsphereContentLibrary
+}
+
+data "vsphere_content_library_item" "template" {
+  count      = var.vsphereContentLibrary != null ? 1 : 0
+  name       = var.vsphereTemplateName
+  type       = "vm-template"
+  library_id = data.vsphere_content_library.library[0].id
+}
