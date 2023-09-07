@@ -1,5 +1,8 @@
 module "thisUbuntu" {
   source                = "../"
+  providers = {
+    vsphere             = vsphere.homeLab
+  }
   vmCPUs                = 1
   vmRAM                 = 1024
   vmDiskSize            = 16
