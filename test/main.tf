@@ -11,7 +11,8 @@ module "thisUbuntu" {
   vsphereNetworkName    = var.vsphereNetworkName
   vsphereFolderName     = "test-vms"
   vsphereDatastoreName  = var.vsphereDatastoreName
-  vsphereTemplateName   = "ubuntu-22.04-main"
+  vsphereContentLibrary = var.vsphereContentLibrary
+  vsphereTemplateName   = "linux-ubuntu-22.04-lts-main"
   vsphereResourceName   = var.vsphereResourceName
 }
 

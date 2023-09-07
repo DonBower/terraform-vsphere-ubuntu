@@ -19,6 +19,11 @@ variable "vsphereClusterName" {
   type        = string
 }
 
+variable "vsphereContentLibrary" {
+  description = "the Name of the vSphere Content Library"
+  type        = string
+}
+
 # variable "vsphereHostName" {
 #   description = "The Name of the vSphere ESX Host"
 #   type        = string
