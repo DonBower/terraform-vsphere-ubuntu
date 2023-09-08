@@ -1,5 +1,18 @@
 # Release History
 
+## 1.0.0
+
+> Release Date: 2023-09-07
+
+:breaking: **Enhancement**:
+
+- Pass the provider so the module can be used with for_each
+
+:boom: **Enhancement**:
+
+- Fix Terraform Badge (Version)
+- Add vSphere Badge (Version)
+
 ## 0.1.2
 
 > Release Date: 2023-08-16
