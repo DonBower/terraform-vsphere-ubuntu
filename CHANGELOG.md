@@ -1,14 +1,31 @@
 # Release History
 
+## 1.0.1
+
+> Release Date: 2023-09-09
+
+:bug: **Bug Fix**:
+
+- Correct the Resource Pool Assignement
+
+:tada: **Enhancement**:
+
+- Add Additional outputs, resource pool id and datastore name
+
+:sweat_drops: **Chore**:
+
+- Change the Local Variables local.thisVM.vmResourcePool and local.thisVM.vmDatastore to add `Id` at the end to better reflect the value.
+
+
 ## 1.0.0
 
 > Release Date: 2023-09-07
 
-:breaking: **Enhancement**:
+:boom: **Breaking**:
 
 - Pass the provider so the module can be used with for_each
 
-:boom: **Enhancement**:
+:tada: **Enhancement**:
 
 - Fix Terraform Badge (Version)
 - Add vSphere Badge (Version)
@@ -17,7 +34,7 @@
 
 > Release Date: 2023-08-16
 
-:boom: **Enhancement**:
+:tada: **Enhancement**:
 
 - Add Linter Badge (code quality)
 - Reduce boot disk size
@@ -26,7 +43,7 @@
 
 > Release Date: 2023-08-15
 
-:boom: **Enhancement**:
+:tada: **Enhancement**:
 
 - Clean up terraform code close issue #1
 Just ran terraform fmt aginst all the `./terraform/*/*.tf` files
@@ -40,7 +57,7 @@ Just ran terraform fmt aginst all the `./terraform/*/*.tf` files
 
 > Release Date: 2023-08-15
 
-:boom: **Enhancement**:
+:tada: **Enhancement**:
 
 - Initial Release
 

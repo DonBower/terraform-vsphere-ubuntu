@@ -1,7 +1,7 @@
 resource "vsphere_virtual_machine" "thisUbuntu" {
   name             = var.vsphereName
-  resource_pool_id = local.thisVM.vmResourcePool
-  datastore_id     = local.thisVM.vmDatastore
+  resource_pool_id = local.thisVM.vmResourcePoolId
+  datastore_id     = local.thisVM.vmDatastoreId
   num_cpus         = var.vmCPUs
   memory           = var.vmRAM
   folder           = local.thisVM.vmFolder
@@ -32,14 +32,4 @@ resource "vsphere_virtual_machine" "thisUbuntu" {
     thin_provisioned = local.thisVM.disk.thisProvision
     eagerly_scrub    = false
   }
-}
-
-output "thisIP" {
-  sensitive = false
-  value     = vsphere_virtual_machine.thisUbuntu.default_ip_address
-}
-
-output "thisDatastore" {
-  sensitive = false
-  value     = var.vsphereDatastoreName
 }
