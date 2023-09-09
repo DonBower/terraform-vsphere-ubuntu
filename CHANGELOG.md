@@ -4,7 +4,7 @@
 
 > Release Date: 2023-09-09
 
-:bug: **Bug Fix**:
+:bug: **Bugfix**:
 
 - Correct the Resource Pool Assignement
 
