@@ -10,7 +10,7 @@
 
 :tada: **Enhancement**:
 
-- Add Additional outputs, **resource pool id** and **datastore name**
+- Add Additional outputs, `thisResourcePoolId` and `thisDatastore`
 
 :sweat_drops: **Chore**:
 

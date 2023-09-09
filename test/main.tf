@@ -26,7 +26,7 @@ output "thisUbuntuIP" {
 
 output "thisUbuntuResourcePool" {
   sensitive = false
-  value     = module.thisUbuntu.thisResourcePool
+  value     = module.thisUbuntu.thisResourcePoolId
 }
 
 output "thisUbuntuDatastore" {

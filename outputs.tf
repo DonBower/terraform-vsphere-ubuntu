@@ -3,7 +3,7 @@ output "thisIP" {
   value     = vsphere_virtual_machine.thisUbuntu.default_ip_address
 }
 
-output "thisResourcePool" {
+output "thisResourcePoolId" {
   sensitive = false
   value     = vsphere_virtual_machine.thisUbuntu.resource_pool_id
 }
