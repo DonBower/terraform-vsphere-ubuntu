@@ -10,11 +10,11 @@
 
 :tada: **Enhancement**:
 
-- Add Additional outputs, resource pool id and datastore name
+- Add Additional outputs, **resource pool id** and **datastore name**
 
 :sweat_drops: **Chore**:
 
-- Change the Local Variables local.thisVM.vmResourcePool and local.thisVM.vmDatastore to add `Id` at the end to better reflect the value.
+- Change the Local Variables `local.thisVM.vmResourcePool` and `local.thisVM.vmDatastore` to add `Id` at the end to better reflect the value.
 
 
 ## 1.0.0
