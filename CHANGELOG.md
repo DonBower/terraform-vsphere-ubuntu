@@ -1,6 +1,6 @@
 # Release History
 
-## 1.0.1
+## 1.1.0
 
 > Release Date: 2023-09-09
 
