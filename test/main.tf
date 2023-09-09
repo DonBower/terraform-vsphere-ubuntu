@@ -24,6 +24,16 @@ output "thisUbuntuIP" {
   value     = module.thisUbuntu.thisIP
 }
 
+output "thisUbuntuResourcePool" {
+  sensitive = false
+  value     = module.thisUbuntu.thisResourcePoolId
+}
+
 output "thisUbuntuDatastore" {
   value = module.thisUbuntu.thisDatastore
+}
+
+output "thisUbuntuFolder" {
+  sensitive = false
+  value     = module.thisUbuntu.thisFolder
 }
