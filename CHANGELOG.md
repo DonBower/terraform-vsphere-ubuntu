@@ -11,6 +11,7 @@
 :tada: **Enhancement**:
 
 - Add Additional outputs, `thisResourcePoolId` and `thisDatastore`
+- Add BDD Testing via GitHub Actions
 
 :sweat_drops: **Chore**:
 
