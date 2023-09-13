@@ -9,14 +9,15 @@ module "thisUbuntu" {
   vsphereName           = "ubuntu-2204"
   vmHostName            = "ubuntu-2204"
   vmHostDomain          = var.vmHostDomain
+  vmRole                = "Test"
   vsphereDatacenterName = var.vsphereDatacenterName
   vsphereClusterName    = var.vsphereClusterName
   vsphereNetworkName    = var.vsphereNetworkName
   vsphereFolderName     = "test-vms"
   vsphereDatastoreName  = var.vsphereDatastoreName
-  vsphereContentLibrary = var.vsphereContentLibrary
+  vsphereContentLibrary = null # var.vsphereContentLibrary
   vsphereTemplateName   = "linux-ubuntu-22.04-lts-main"
-  vsphereResourceName   = var.vsphereResourceName
+  vsphereResourceName   = null
 }
 
 output "thisUbuntuIP" {

@@ -32,4 +32,5 @@ resource "vsphere_virtual_machine" "thisUbuntu" {
     thin_provisioned = local.thisVM.disk.thisProvision
     eagerly_scrub    = false
   }
+  custom_attributes = local.thisVM.tags
 }

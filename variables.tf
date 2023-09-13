@@ -81,6 +81,12 @@ variable "vmMacAddress" {
   default     = null
 }
 
+variable "vmRole" {
+  description = "Tag value for Custom Attribute Role"
+  type        = string
+  default     = null
+}
+
 variable "vmDiskSize" {
   description = "The amout of Disk expresed in gigabytes for the VM"
   type        = number

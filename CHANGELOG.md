@@ -1,5 +1,23 @@
 # Release History
 
+## 1.1.1
+
+> Release Date: 2023-09-12
+
+:bug: **Bugfix**:
+
+- Correct the Resource Pool Assignement when null
+
+:tada: **Enhancement**:
+
+- Add Custom Attributes 'Role' and 'Template' (Role is a new variable)
+- Add Manual BDD Testing.
+
+:sweat_drops: **Chore**:
+
+- Change the Local Variables `local.thisVM.vmResourcePool` and `local.thisVM.vmDatastore` to add `Id` at the end to better reflect the value.
+
+
 ## 1.1.0
 
 > Release Date: 2023-09-09
@@ -11,7 +29,6 @@
 :tada: **Enhancement**:
 
 - Add Additional outputs, `thisResourcePoolId` and `thisDatastore`
-- Add BDD Testing via GitHub Actions
 
 :sweat_drops: **Chore**:
 

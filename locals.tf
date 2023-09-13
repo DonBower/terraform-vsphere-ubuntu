@@ -16,5 +16,9 @@ locals {
       size          = var.vmDiskSize
       thisProvision = true
     }
+    tags = {
+      (data.vsphere_custom_attribute.Template.id) = var.vsphereTemplateName
+      (data.vsphere_custom_attribute.Role.id)     = var.vmRole
+    }
   }
 }

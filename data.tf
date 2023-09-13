@@ -19,7 +19,7 @@ data "vsphere_compute_cluster" "cluster" {
 
 data "vsphere_resource_pool" "default" {
   # name          = format("%s%s", data.vsphere_compute_cluster.cluster.name, "/Resources")
-  name          = local.vsphereResourceName
+  name          = local.vsphereResourceName != null ? local.vsphereResourceName : format("%s%s", data.vsphere_compute_cluster.cluster.name, "/Resources")
   datacenter_id = data.vsphere_datacenter.datacenter.id
 }
 
@@ -44,4 +44,12 @@ data "vsphere_content_library_item" "template" {
   name       = var.vsphereTemplateName
   type       = "vm-template"
   library_id = data.vsphere_content_library.library[0].id
+}
+
+data "vsphere_custom_attribute" "Template" {
+  name = "Template"
+}
+
+data "vsphere_custom_attribute" "Role" {
+  name = "Role"
 }
