@@ -13,10 +13,6 @@
 - Add Custom Attributes 'Role' and 'Template' (Role is a new variable)
 - Add Manual BDD Testing.
 
-:sweat_drops: **Chore**:
-
-- Change the Local Variables `local.thisVM.vmResourcePool` and `local.thisVM.vmDatastore` to add `Id` at the end to better reflect the value.
-
 
 ## 1.1.0
 
