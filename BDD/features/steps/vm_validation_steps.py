@@ -1,6 +1,6 @@
 import os
 
-from behave import given, when, then
+from behave import given, then, when
 from pyVim.connect import SmartConnect  # , Disconnect
 from pyVmomi import vim
 
@@ -10,7 +10,7 @@ host = os.environ.get("TF_VAR_vsphereEndpoint")
 
 if not username or not password or not host:
     raise ValueError(
-        "Please set the TF_VAR_vsphereUsername, TF_VAR_vspherePassword and TF_VAR_vsphereEndpoint environment variables."
+        "Please set the TF_VAR_vsphereUsername, TF_VAR_vspherePassword & TF_VAR_vsphereEndpoint environment variables."
     )
 
 
