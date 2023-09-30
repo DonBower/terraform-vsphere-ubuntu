@@ -1,19 +1,22 @@
-from behave import given, when, then
-from pyVim.connect import SmartConnect, Disconnect
-from pyVmomi import vim
 import os
+
+from behave import given, when, then
+from pyVim.connect import SmartConnect #, Disconnect
+from pyVmomi import vim
 username = os.environ.get('TF_VAR_vsphereUsername')
 password = os.environ.get('TF_VAR_vspherePassword')
 host = os.environ.get('TF_VAR_vsphereEndpoint')
 
 if not username or not password or not host:
-    raise ValueError("Please set the TF_VAR_vsphereUsername, TF_VAR_vspherePassword and TF_VAR_vsphereEndpoint environment variables.")
-
-
+  raise ValueError(
+      "Please set the TF_VAR_vsphereUsername, TF_VAR_vspherePassword and TF_VAR_vsphereEndpoint environment variables."
+  )
 # Create a connection to vSphere
 @given('I connect to my vSphere vCenter host')
 def step_connect_to_vsphere(context):
-  context.si = SmartConnect(disableSslCertValidation=True, host=host, user=username, pwd=password)
+  context.si = SmartConnect(
+    disableSslCertValidation=True, host=host, user=username, pwd=password
+  )
   context.content = context.si.RetrieveContent()
 
 @when('I retrieve details of the VM created by Terraform')

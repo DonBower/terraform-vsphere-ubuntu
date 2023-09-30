@@ -29,21 +29,21 @@ variable "vsphereClusterName" {
   type        = string
 }
 
-variable "vsphereResourceName" {
-  description = "the Name of the vSphere Resource Pool"
-  type        = string
-  default     = null
-}
+# variable "vsphereResourceName" {
+#   description = "the Name of the vSphere Resource Pool"
+#   type        = string
+#   default     = null
+# }
 
 variable "vsphereDatastoreName" {
   description = "the Name of the vSphere Datastore"
   type        = string
 }
 
-variable "vsphereContentLibrary" {
-  description = "the Name of the vSphere Content Library"
-  type        = string
-}
+# variable "vsphereContentLibrary" {
+#   description = "the Name of the vSphere Content Library"
+#   type        = string
+# }
 
 variable "vsphereNetworkName" {
   description = "the Name of the vSphere Network"

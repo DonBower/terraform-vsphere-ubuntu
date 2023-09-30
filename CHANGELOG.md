@@ -10,7 +10,7 @@
 
 :sweat_drops: **Chore**:
 
-- move BDD Github Action out of play.
+- move BDD GitHub Action out of play.
 
 ## 1.1.1
 
