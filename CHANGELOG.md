@@ -1,5 +1,13 @@
 # Release History
 
+## 1.2.0
+
+> Release Date: 2023-09-30
+
+:tada: **Enhancement**:
+
+- Add additional disks feature.
+
 ## 1.1.1
 
 > Release Date: 2023-09-12
