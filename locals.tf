@@ -14,7 +14,8 @@ locals {
     disk = {
       label         = "root"
       size          = var.vmDiskSize
-      thisProvision = true
+      thinProvision = true
+      unitNumber    = 0
     }
     tags = {
       (data.vsphere_custom_attribute.Template.id) = var.vsphereTemplateName

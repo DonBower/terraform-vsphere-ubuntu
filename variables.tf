@@ -93,3 +93,8 @@ variable "vmDiskSize" {
   default     = 16
 }
 
+variable "vmAdditionalDisks" {
+  description = "A map of additional Disk Drives"
+  type        = any
+  default     = {}
+}

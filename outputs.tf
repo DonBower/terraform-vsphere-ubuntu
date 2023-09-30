@@ -17,3 +17,8 @@ output "thisDatastore" {
   sensitive = false
   value     = var.vsphereDatastoreName
 }
+
+output "thisTemplate" {
+  sensitive = false
+  value     = data.vsphere_content_library_item.template
+}
