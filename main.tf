@@ -21,16 +21,31 @@ resource "vsphere_virtual_machine" "thisUbuntu" {
       # ipv4_gateway            = "192.168.2.1"
     }
   }
+
   network_interface {
     use_static_mac = local.thisVM.network.staticMAC
     mac_address    = local.thisVM.network.macAddress
     network_id     = local.thisVM.network.vsphereNetwork
   }
+
   disk {
     label            = local.thisVM.disk.label
     size             = local.thisVM.disk.size
-    thin_provisioned = local.thisVM.disk.thisProvision
+    thin_provisioned = local.thisVM.disk.thinProvision
     eagerly_scrub    = false
+    unit_number      = local.thisVM.disk.unitNumber
   }
+
+  dynamic "disk" {
+    for_each = var.vmAdditionalDisks
+    content {
+      label            = disk.key
+      size             = disk.value.size
+      thin_provisioned = disk.value.thinProvision
+      eagerly_scrub    = false
+      unit_number      = disk.value.unitNumber
+    }
+  }
+
   custom_attributes = local.thisVM.tags
 }
