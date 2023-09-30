@@ -9,11 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4.0.0
+        uses: actions/checkout@v4.0.0
         with:
           fetch-depth: 0
       - name: Lint Code
-        uses: github/super-linter@45fc0d88288beee4701c62761281edfee85655d7 # v5.0.0
+        uses: github/super-linter@v5.0.0
         env:
           GITHUB_TOKEN: ${{ github.token }}
           DEFAULT_BRANCH: "main"
