@@ -8,6 +8,10 @@
 
 - Add additional disks feature.
 
+:sweat_drops: **Chore**:
+
+- move BDD Github Action out of play.
+
 ## 1.1.1
 
 > Release Date: 2023-09-12
