@@ -10,7 +10,7 @@ locals {
     vmResourcePoolId = data.vsphere_resource_pool.default.id
     vmDatastoreId    = data.vsphere_datastore.datastore.id
     vmTemplateID     = var.vsphereContentLibrary != null ? data.vsphere_content_library_item.template[0].id : data.vsphere_virtual_machine.template[0].id
-    vmAnnotation     = "Version: ${local.version_text}\nBuilt on: ${local.build_date}\nBuilt with: ${local.build_with}\nBuilt from: ${var.vsphereTemplateName}"
+    vmAnnotation     = "Version: ${local.version_text}\nBuilt on: ${local.build_date} ${local.build_date}\nBuilt with: ${local.build_with}\nBuilt from: ${var.vsphereTemplateName}"
 
     network = {
       staticMAC      = var.vmMacAddress != null ? true : false
