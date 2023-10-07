@@ -5,9 +5,9 @@ module "thisUbuntu" {
   }
   vmCPUs       = 4
   vmRAM        = 16384
-  vmDiskSize   = 16
-  vsphereName  = "ubuntu-2204"
-  vmHostName   = "ubuntu-2204"
+  vmDiskSize   = 64
+  vsphereName  = "ubuntu-2204-test"
+  vmHostName   = "ubuntu-2204-test"
   vmHostDomain = var.vmHostDomain
   vmRole       = "Test"
   vmAdditionalDisks = {
@@ -23,7 +23,7 @@ module "thisUbuntu" {
   vsphereFolderName     = "test-vms"
   vsphereDatastoreName  = var.vsphereDatastoreName
   vsphereContentLibrary = null # var.vsphereContentLibrary
-  vsphereTemplateName   = "ubuntu-22.04-latest"
+  vsphereTemplateName   = "ubuntu-22.04-0.2.2-rc"
   vsphereResourceName   = null
 }
 
