@@ -1,5 +1,6 @@
 resource "vsphere_virtual_machine" "thisUbuntu" {
   name             = var.vsphereName
+  annotation       = local.thisVM.vmAnnotation
   resource_pool_id = local.thisVM.vmResourcePoolId
   datastore_id     = local.thisVM.vmDatastoreId
   num_cpus         = var.vmCPUs
@@ -28,12 +29,15 @@ resource "vsphere_virtual_machine" "thisUbuntu" {
     network_id     = local.thisVM.network.vsphereNetwork
   }
 
-  disk {
-    label            = local.thisVM.disk.label
-    size             = local.thisVM.disk.size
-    thin_provisioned = local.thisVM.disk.thinProvision
-    eagerly_scrub    = false
-    unit_number      = local.thisVM.disk.unitNumber
+  dynamic "disk" {
+    for_each = data.vsphere_virtual_machine.template[0].disks
+    content {
+      label            = disk.value.label
+      size             = disk.value.size
+      thin_provisioned = disk.value.thin_provisioned
+      eagerly_scrub    = disk.value.eagerly_scrub
+      unit_number      = disk.value.unit_number
+    }
   }
 
   dynamic "disk" {

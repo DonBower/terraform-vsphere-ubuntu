@@ -20,5 +20,5 @@ output "thisDatastore" {
 
 output "thisTemplate" {
   sensitive = false
-  value     = data.vsphere_content_library_item.template
+  value     = data.vsphere_virtual_machine.template
 }

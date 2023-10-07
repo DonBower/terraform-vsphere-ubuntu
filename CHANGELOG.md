@@ -1,5 +1,17 @@
 # Release History
 
+## 1.2.1
+
+> Release Date: 2023-10-07
+
+:bug: **Bugfix**:
+
+- Correct Orginal Disk Assignment to use template values
+
+:sweat_drops: **Chore**:
+
+- Add some VM Notes (annotation).
+
 ## 1.2.0
 
 > Release Date: 2023-09-30
