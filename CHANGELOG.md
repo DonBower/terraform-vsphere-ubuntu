@@ -1,5 +1,13 @@
 # Release History
 
+## 1.2.2
+
+> Release Date: 2023-10-07
+
+:bug: **Bugfix**:
+
+- Correct Built on Annotation (and fix super-linter)
+
 ## 1.2.1
 
 > Release Date: 2023-10-07
