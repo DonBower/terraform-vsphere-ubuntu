@@ -1,5 +1,17 @@
 # Release History
 
+## 1.3.0
+
+> Release Date: 2023-10-08
+
+:tada: **Enhancement**:
+
+- Allow main disk size to be overridden.
+
+:sweat_drops: **Chore**:
+
+- resize badges to be uniform in size.
+
 ## 1.2.2
 
 > Release Date: 2023-10-07

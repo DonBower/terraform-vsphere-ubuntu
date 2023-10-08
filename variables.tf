@@ -90,7 +90,7 @@ variable "vmRole" {
 variable "vmDiskSize" {
   description = "The amout of Disk expresed in gigabytes for the VM"
   type        = number
-  default     = 16
+  default     = 0
 }
 
 variable "vmAdditionalDisks" {
