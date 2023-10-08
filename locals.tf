@@ -19,7 +19,7 @@ locals {
     }
     disk = {
       label         = "root"
-      size          = var.vmDiskSize
+      size          = var.vmDiskSize != null ? var.vmDiskSize : 0
       thinProvision = true
       unitNumber    = 0
     }
