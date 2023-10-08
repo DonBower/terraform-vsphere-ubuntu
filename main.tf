@@ -33,7 +33,7 @@ resource "vsphere_virtual_machine" "thisUbuntu" {
     for_each = data.vsphere_virtual_machine.template[0].disks
     content {
       label            = disk.value.label
-      size             = disk.value.size
+      size             = local.thisVM.disk.size > disk.value.size ? var.vmDiskSize : disk.value.size
       thin_provisioned = disk.value.thin_provisioned
       eagerly_scrub    = disk.value.eagerly_scrub
       unit_number      = disk.value.unit_number
