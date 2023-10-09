@@ -1,5 +1,22 @@
 # Release History
 
+## 1.4.0
+
+> Release Date: 2023-10-09
+
+:tada: **Enhancement**:
+
+- Allow for static IP
+- Additional Outputs: `thisFQDN`, `thisMAC`, `thisTemplateName`
+
+:sweat_drops: **Chore**:
+
+- Refactor code to determine the template being used.
+
+:clock4: **Announcement**:
+
+- Output `thisTemplate` will be dropped in a future release
+
 ## 1.3.0
 
 > Release Date: 2023-10-08

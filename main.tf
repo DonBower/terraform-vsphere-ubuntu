@@ -16,10 +16,10 @@ resource "vsphere_virtual_machine" "thisUbuntu" {
         domain    = var.vmHostDomain
       }
       network_interface {
-        # ipv4_address          = "192.168.2.245"
-        # ipv4_netmask          = 24
+        ipv4_address = local.thisVM.network.ipv4Address
+        ipv4_netmask = local.thisVM.network.ipv4Mask
       }
-      # ipv4_gateway            = "192.168.2.1"
+      ipv4_gateway = local.thisVM.network.ipv4Gateway
     }
   }
 

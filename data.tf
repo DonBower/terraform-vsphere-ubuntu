@@ -29,7 +29,7 @@ data "vsphere_datastore" "datastore" {
 }
 
 data "vsphere_virtual_machine" "template" {
-  count         = var.vsphereTemplateName != null ? 1 : 0
+  count         = var.vsphereContentLibrary != null ? 0 : 1
   name          = var.vsphereTemplateName
   datacenter_id = data.vsphere_datacenter.datacenter.id
 }
