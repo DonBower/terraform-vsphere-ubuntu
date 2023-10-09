@@ -75,6 +75,12 @@ variable "vmRAM" {
   default     = 1024
 }
 
+variable "vmIPv4Address" {
+  description = "Assign a Static IPv4 Address here"
+  type        = string
+  default     = null
+}
+
 variable "vmMacAddress" {
   description = "Assign a Static Mac Address here"
   type        = string

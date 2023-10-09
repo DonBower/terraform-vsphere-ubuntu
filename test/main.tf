@@ -1,14 +1,55 @@
+terraform {
+  required_providers {
+    vsphere = {
+      source  = "hashicorp/vsphere"
+      version = ">= 2.4.1"
+    }
+  }
+}
+
+variable "vsphereEndpoint" {
+  description = "FQDN of the vCenter"
+  type        = string
+}
+
+variable "vsphereUsername" {
+  description = "Username to access vCenter"
+  type        = string
+}
+
+variable "vspherePassword" {
+  description = "Password for Username to access vCenter"
+  type        = string
+}
+
+variable "vsphereAllowUnverifiedSSL" {
+  description = "Allow Provider to access unverified vCenters"
+  type        = bool
+  default     = true
+}
+
+provider "vsphere" {
+  # user - (Required) This is the username for vSphere API operations. Can also be specified with the VSPHERE_USER environment variable.
+  # password - (Required) This is the password for vSphere API operations. Can also be specified with the VSPHERE_PASSWORD environment variable.
+  # vsphere_server - (Required) This is the vCenter Server FQDN or IP Address for vSphere API operations. Can also be specified with the VSPHERE_SERVER environment variable.
+  alias                = "homeLab"
+  vsphere_server       = var.vsphereEndpoint
+  user                 = var.vsphereUsername
+  password             = var.vspherePassword
+  allow_unverified_ssl = var.vsphereAllowUnverifiedSSL
+}
+
 module "thisUbuntu" {
   source = "../"
   providers = {
     vsphere = vsphere.homeLab
   }
+  vsphereName  = "ubuntu-2204-test"
+  vmHostName   = "ubuntu-2204-test"
   vmCPUs       = 4
   vmRAM        = 16384
   vmDiskSize   = 64
-  vsphereName  = "ubuntu-2204-test"
-  vmHostName   = "ubuntu-2204-test"
-  vmHostDomain = var.vmHostDomain
+  vmHostDomain = "ag6hq.net"
   vmRole       = "Test"
   vmAdditionalDisks = {
     extraDisk = {
@@ -17,19 +58,37 @@ module "thisUbuntu" {
       unitNumber    = 1
     }
   }
-  vsphereDatacenterName = var.vsphereDatacenterName
-  vsphereClusterName    = var.vsphereClusterName
-  vsphereNetworkName    = var.vsphereNetworkName
+  vmMacAddress  = "00:50:56:00:02:c7"
+  vmIPv4Address = "192.168.2.199"
+
+  vsphereDatacenterName = "homelab"
+  vsphereClusterName    = "cluster1"
+  vsphereNetworkName    = "VM Network"
   vsphereFolderName     = "test-vms"
-  vsphereDatastoreName  = var.vsphereDatastoreName
+  vsphereDatastoreName  = "esx2-datastore"
   vsphereContentLibrary = null # var.vsphereContentLibrary
-  vsphereTemplateName   = "ubuntu-22.04-0.2.2-rc"
+  vsphereTemplateName   = "ubuntu-22.04-0.2.2"
   vsphereResourceName   = null
+}
+
+output "thisUbuntuFQDN" {
+  sensitive = false
+  value     = module.thisUbuntu.thisFQDN
 }
 
 output "thisUbuntuIP" {
   sensitive = false
   value     = module.thisUbuntu.thisIP
+}
+
+output "thisUbuntuMAC" {
+  sensitive = false
+  value     = module.thisUbuntu.thisMAC
+}
+
+output "thisUbuntuTemplateName" {
+  sensitive = false
+  value     = module.thisUbuntu.thisTemplateName
 }
 
 output "thisUbuntuResourcePool" {
@@ -46,7 +105,3 @@ output "thisUbuntuFolder" {
   value     = module.thisUbuntu.thisFolder
 }
 
-output "thisTemplate" {
-  sensitive = false
-  value     = module.thisUbuntu.thisTemplate
-}
