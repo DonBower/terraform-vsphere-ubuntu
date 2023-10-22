@@ -1,5 +1,14 @@
 # Release History
 
+## 1.4.1
+
+> Release Date: 2023-10-22
+
+:bug: **BugFix**:
+
+- Fix static IP to persist over reboots
+- Add Ansible task
+
 ## 1.4.0
 
 > Release Date: 2023-10-09

@@ -50,6 +50,9 @@ resource "vsphere_virtual_machine" "thisUbuntu" {
       unit_number      = disk.value.unitNumber
     }
   }
+  provisioner "local-exec" {
+    command = "ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -u don -i '${self.default_ip_address},' --private-key ${local.buildPrivateKey} -e 'pub_key=${local.buildPublicKey}' -e 'networkIsStatic=${local.staticIPv4}' ${local.ansiblePlaybook}"
+  }
 
   custom_attributes = local.thisVM.tags
 }
