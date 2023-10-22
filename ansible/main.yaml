@@ -1,0 +1,22 @@
+---
+- name: Prepare the vm
+  become: true
+  become_method: ansible.builtin.sudo
+  debugger: never
+  gather_facts: true
+  hosts: all
+  tasks:
+    - name: Lock in network config
+      ansible.builtin.copy:
+        src: "99-disable-network-config.cfg"
+        dest: "/etc/cloud/cloud.cfg.d/99-disable-network-config.cfg"
+        mode: "666"
+        owner: root
+        group: root
+      when: networkIsStatic
+    # - name: Update the password for the user don
+    #   ansible.builtin.user:
+    #     name: don
+    #     state: present
+    #     password: "{{ passwordInSHA512 }}"
+    #   when: passwordInSHA512 is defined
