@@ -1,7 +1,7 @@
 ---
 - name: Prepare the vm
   become: true
-  become_method: ansible.builtin.sudo
+  become_method: sudo
   debugger: never
   gather_facts: true
   hosts: all
