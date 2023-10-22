@@ -67,7 +67,7 @@ module "thisUbuntu" {
   vsphereFolderName     = "test-vms"
   vsphereDatastoreName  = "esx2-datastore"
   vsphereContentLibrary = null # var.vsphereContentLibrary
-  vsphereTemplateName   = "ubuntu-22.04-0.2.2"
+  vsphereTemplateName   = "ubuntu-k8s-0.1.2"
   vsphereResourceName   = null
 }
 

@@ -1,5 +1,18 @@
 # Release History
 
+## 1.4.1
+
+> Release Date: 2023-10-22
+
+:bug: **BugFix**:
+
+- Fix static IP to persist over reboots
+- Add Ansible to post provision
+
+:sweat_drops: **Chore**:
+
+- Bump actions/checkout from 4.0.0 to 4.1.1
+
 ## 1.4.0
 
 > Release Date: 2023-10-09

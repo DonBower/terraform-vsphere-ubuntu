@@ -2,6 +2,9 @@ locals {
   build_with          = "HashiCorp Terraform 1.4.6"
   build_date          = formatdate("YYYY-MM-DD", timestamp())
   build_time          = formatdate("hh:mm ZZZ", timestamp())
+  buildPublicKey      = pathexpand("~/.ssh/id_ecdsa.pub")
+  buildPrivateKey     = pathexpand("~/.ssh/id_ecdsa")
+  ansiblePlaybook     = "${path.module}/ansible/main.yaml"
   version_text        = file("${path.module}/version.txt")
   vsphereResourceName = var.vsphereResourceName != null ? format("%s%s%s", data.vsphere_compute_cluster.cluster.name, "/Resources/", var.vsphereResourceName) : format("%s%s", data.vsphere_compute_cluster.cluster.name, "/Resources")
   thisTemplateName    = try(data.vsphere_content_library_item.template[0].name, data.vsphere_virtual_machine.template[0].name)
