@@ -7,7 +7,11 @@
 :bug: **BugFix**:
 
 - Fix static IP to persist over reboots
-- Add Ansible task
+- Add Ansible to post provision
+
+:sweat_drops: **Chore**:
+
+- Bump actions/checkout from 4.0.0 to 4.1.1
 
 ## 1.4.0
 
