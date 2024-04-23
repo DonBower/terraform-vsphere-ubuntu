@@ -13,7 +13,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Lint Code
-        uses: github/super-linter@v5.0.0
+        uses: github/super-linter@v6
         env:
           GITHUB_TOKEN: ${{ github.token }}
           DEFAULT_BRANCH: "main"
