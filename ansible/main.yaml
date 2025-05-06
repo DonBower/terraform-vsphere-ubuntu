@@ -1,7 +1,7 @@
 ---
 - name: Prepare the vm
   become: true
-  become_method: sudo
+  become_method: ansible.builtin.sudo
   debugger: never
   gather_facts: true
   hosts: all
@@ -14,6 +14,13 @@
         owner: root
         group: root
       when: networkIsStatic
+
+    - name: Update and upgrade apt packages
+      become: true
+      ansible.builtin.apt:
+        upgrade: true
+        update_cache: true
+
     # - name: Update the password for the user don
     #   ansible.builtin.user:
     #     name: don
