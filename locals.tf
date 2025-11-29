@@ -12,7 +12,7 @@ locals {
 
   staticIPv4  = var.vmIPv4Address != null ? true : false
   ipv4Address = local.staticIPv4 ? var.vmIPv4Address : null
-  ipv4Mask    = local.staticIPv4 ? 24 : null
+  ipv4Mask    = local.staticIPv4 ? var.vmIPv4Mask != null ? var.vmIPv4Mask : 24 : null
   ipv4Gateway = local.staticIPv4 ? cidrhost("${local.ipv4Address}/${local.ipv4Mask}", 1) : null
   thisVM = {
     vmHostName       = var.vmHostName != null ? var.vmHostName : var.vsphereName

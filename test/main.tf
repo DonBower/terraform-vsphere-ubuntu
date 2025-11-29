@@ -65,7 +65,7 @@ module "thisUbuntu" {
   vsphereClusterName    = "cluster1"
   vsphereNetworkName    = "VM Network"
   vsphereFolderName     = "test-vms"
-  vsphereDatastoreName  = "esx2-datastore"
+  vsphereDatastoreName  = "shared-ds"
   vsphereContentLibrary = null # var.vsphereContentLibrary
   vsphereTemplateName   = "ubuntu-k8s-0.1.2"
   vsphereResourceName   = null

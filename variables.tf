@@ -75,14 +75,21 @@ variable "vmRAM" {
   default     = 1024
 }
 
+
 variable "vmIPv4Address" {
-  description = "Assign a Static IPv4 Address here"
+  description = "Assign a Static IPv4 Address here (optional). If not set, DHCP will be used."
   type        = string
   default     = null
 }
 
+variable "vmIPv4Mask" {
+  description = "Subnet mask length (CIDR, e.g. 24 for 255.255.255.0). Optional, defaults to 24 if vmIPv4Address is set."
+  type        = number
+  default     = null
+}
+
 variable "vmMacAddress" {
-  description = "Assign a Static Mac Address here"
+  description = "Assign a Static Mac Address here (optional). If not set, MAC will be auto-assigned."
   type        = string
   default     = null
 }
